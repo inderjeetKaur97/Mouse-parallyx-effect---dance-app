@@ -1,0 +1,65 @@
+extends base.pug
+block style 
+    style
+      include ../static/style.css            
+block content
+    section#main-section
+        nav#navbar
+            .logo 
+                img(src="/img/logo (8).svg", alt="")
+            ul 
+                li #[a(href='/') Home]
+                li #[a(href='/') Services]
+                li #[a(href='/') Join now]
+                li #[a(href='/contact') Contact us]
+                li #[a(href='/') About us ]
+        .alert.alert-danger.alert-dismissible.fade.show.displaySuccess(role='alert')
+            strong Successfull !
+            |  Thankyou for enquiring @SDAcademy
+            button.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true') &times;
+        div.main-container 
+            div.main-content 
+                h1 #[span Have a look] Around!
+                h2 And you will find the inspiration to express
+                h2 with the art of Dance
+            div.main-paralyx-layer   
+                svg(viewbox='0 0 200 200')
+                    circle(cx='130' cy='145' r='50.5' stroke='#cfcccc' fill='none' stroke-width='0.3' data-value='2' class='bckcircle')
+                    circle(cx='40' cy='150' r='30' stroke='#cfcccc' fill='none' stroke-width='0.3' data-value='-3' class='bckcircle')
+                    circle(cx='120' cy='50' r='40.5' stroke='#cfcccc' fill='none' stroke-width='0.3' data-value='3' class='bckcircle')
+                    circle(cx='60' cy='85' r='50' stroke='#cfcccc' fill='none' stroke-width='0.3' data-value='1' class='bckcircle')
+                    circle(cx='40' cy='45' r='25'  fill='#7d3b4b' stroke-width='0.3' filter='url(#f5)' data-value='-1' class='frntcircle')
+                    circle(cx='120' cy='135' r='30'  fill='#7d3b4b' stroke-width='0.3' filter='url(#f4)' data-value='3' class='frntcircle')
+                    circle(cx='60' cy='115' r='40' fill='#53091b' stroke-width='0.3' filter='url(#f4)' data-value='-4' class='frntcircle')
+                         filter#f4(x='0' y='0' width='200%' height='200%')
+                            feoffset(result='offOut' in='SourceGraphic' dx='20' dy='20')
+                            fecolormatrix(result='matrixOut' in='offOut' type='matrix' values='0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0')
+                            fegaussianblur(result='blurOut' in='matrixOut' stddeviation='10')
+                            feblend(in='SourceGraphic' in2='blurOut' mode='normal')
+                         filter#f5(x='0' y='0' width='200%' height='200%')
+                            feoffset(result='offOut' in='SourceGraphic' dx='5' dy='10')
+                            fecolormatrix(result='matrixOut' in='offOut' type='matrix' values='0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0')
+                            fegaussianblur(result='blurOut' in='matrixOut' stddeviation='5')
+                            feblend(in='SourceGraphic' in2='blurOut' mode='normal')
+                    circle(cx='10' cy='155' r='20' fill='#7d3b4b' stroke-width='0.3' filter='url(#f5)' class='crcircle' data-value='2')
+                    circle(cx='190' cy='190' r='20' fill='#53091b' stroke-width='0.3' filter='url(#f5)' class='crcircle' data-value='2')
+                    circle(cx='180' cy='0' r='30'  fill='#53091b' stroke-width='0.3' filter='url(#f4)' class='crcircle' data-value='2')
+
+                    
+                div.box1
+                    img(src="/img/paralyx-img-1.png", alt="" class='object' data-value='-3')
+
+                div.box2 
+                    img(src="/img/paralyx-img-2.png", alt="" class='object' data-value='5')
+                div.box3 
+                    img(src="/img/paralyx-img-3.png", alt="" class='object' data-value='2')
+     
+    section#introSection 
+        | section for pictures
+    section#sponserSection 
+        | section for sponsers
+
+     
+        
+        

@@ -1,0 +1,30 @@
+extends base.pug
+
+block style 
+    style
+      include ../static/style.css
+      include ../static/contact-style.css
+            
+block content 
+    nav#navbar.navbar-bg 
+            .logo 
+                img(src="/img/logo (8).svg", alt="")
+            ul 
+                li #[a(href='/') Home]
+                li #[a(href='/') Services]
+                li #[a(href='/') Join now]
+                li #[a(href='/') Contact us]
+                li #[a(href='/') About us ]
+    block content
+    section#form 
+        h2 Contact Us
+        form(action="/contact"  ,class="form-box", method ="post") 
+            input(type="text" class='form-input' name='name' placeholder='Enter your Name*' required)
+            input(type="email" class='form-input' name='email' placeholder='Enter your Email*' required)
+            input(type="tel" class='form-input' name='phone' placeholder='Enter your 10 digit Phone-no'  required)
+            input(type="text" class='form-input' name='address' placeholder='Enter your address*' required)
+            textarea(class='form-input' name="message" cols="30", rows="10" placeholder='Enter your query*' required) 
+            button.btn(type='submit') Submit 
+block script
+    script 
+        include ../static/contact.js
